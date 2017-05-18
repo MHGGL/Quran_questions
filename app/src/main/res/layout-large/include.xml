@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/content_main"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/btn_tests"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:text="تست ها"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:onClick="btn_tests"
+        android:textColor="#FFFFFF"
+        android:theme="@style/my_btn"
+        android:layout_above="@+id/btn_developer"
+        android:layout_marginBottom="94dp" />
+
+    <Button
+        android:id="@+id/btn_developer"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:text="آموزش"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:onClick="btn_developer"
+        android:layout_marginBottom="112dp"
+        android:textColor="#FFFFFF"
+        android:theme="@style/my_btn"
+        android:layout_above="@+id/btn_my_marks" />
+
+    <Button
+        android:id="@+id/btn_my_marks"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:text="کارنامه های من"
+        android:onClick="btn_my_marks"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="93dp"
+        android:theme="@style/my_btn"
+        android:layout_above="@+id/btn_exit"/>
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:text="خروج"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:theme="@style/my_btn_exit"
+        android:onClick="btn_exit"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="150dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

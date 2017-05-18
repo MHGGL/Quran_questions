@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="TextView"
+        android:textColor="@color/colorBlue"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RadioButton
+        android:id="@+id/radio_button_number_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        android:textColor="@color/colorBlue"
+        android:textSize="15sp"
+        android:layout_below="@+id/radio_button_number_three"
+        android:layout_alignLeft="@+id/radio_button_number_three"
+        android:layout_alignStart="@+id/radio_button_number_three"
+        android:layout_marginTop="37dp" />
+
+    <RadioButton
+        android:id="@+id/radio_button_number_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RadioButton"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlue"
+        android:layout_below="@+id/radio_button_number_two"
+        android:layout_alignLeft="@+id/radio_button_number_two"
+        android:layout_alignStart="@+id/radio_button_number_two"
+        android:layout_marginTop="34dp" />
+
+    <RadioButton
+        android:id="@+id/radio_button_number_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="RadioButton"
+        android:textColor="@color/colorBlue"
+        android:layout_below="@+id/radio_button_number_one"
+        android:layout_alignLeft="@+id/radio_button_number_one"
+        android:layout_alignStart="@+id/radio_button_number_one"
+        android:layout_marginTop="22dp" />
+
+    <RadioButton
+        android:id="@+id/radio_button_number_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlue"
+        android:text="RadioButton"
+        android:textSize="15sp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/txt_question"
+        android:layout_alignRight="@+id/txt_question"
+        android:layout_alignEnd="@+id/txt_question" />
+
+</RelativeLayout>

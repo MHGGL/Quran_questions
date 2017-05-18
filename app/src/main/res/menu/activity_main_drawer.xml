@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_done_black_24dp"
+            android:title="تست ها" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_file_download_black_24dp"
+            android:title="دانلود" />
+        <item
+            android:id="@+id/nav_rating"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="نظردهی به برنامه" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="تنظیمات" />
+    </group>
+
+    <item android:title="دیگر">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="معرفی به دوستان" />
+            <item
+                android:id="@+id/nav_my"
+                android:icon="@drawable/ic_call_black_24dp"
+                android:title="ارتباط با ما" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_import_contacts_black_24dp"
+                android:title="درباره برنامه" />
+        </menu>
+    </item>
+
+</menu>

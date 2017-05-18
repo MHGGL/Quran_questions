@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="254dp">
+
+        <Button
+            android:id="@+id/btn_nine_one"
+            android:theme="@style/my_btn"
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_height="70dp"
+            android:textSize="20sp"
+            android:text="آزمون شماره    1"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/btn_nine_two"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:theme="@style/my_btn"
+            android:layout_height="70dp"
+            android:textColor="#FFFFFF"
+            android:text="آزمون شماره    2" />
+
+        <Button
+            android:id="@+id/btn_nine_three"
+            android:layout_width="match_parent"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:theme="@style/my_btn"
+            android:layout_height="70dp"
+            android:layout_marginTop="25dp"
+            android:text="آزمون شماره    3" />
+
+        <Button
+            android:id="@+id/btn_nine_four"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:theme="@style/my_btn"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF"
+            android:layout_height="70dp"
+            android:text="آزمون شماره    4"/>
+
+        <Button
+            android:id="@+id/btn_nine_five"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="25dp"
+            android:text="آزمون شماره    5"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:theme="@style/my_btn" />
+    </LinearLayout>
+</RelativeLayout>

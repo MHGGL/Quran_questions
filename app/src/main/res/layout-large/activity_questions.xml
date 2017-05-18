@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/ic_arrow_back_black_24dp"
+        android:onClick="btn_back_activity"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/actionbar"
+        app:titleTextColor="#FFFFFF"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:textColor="#FFFFFF"
+        android:text="آزمون"
+        android:layout_marginBottom="26dp"
+        android:layout_alignBottom="@+id/toolbar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textColor="#FFFFFFFF"
+        android:text="برای گرفتن کارنامه ی خود از این آزمون کلیک کتید!"
+        android:theme="@style/my_btn"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Chronometer
+        android:id="@+id/chronometer5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlue"
+        android:textSize="20sp"
+        android:layout_marginTop="24dp"
+        android:textStyle="bold"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_toLeftOf="@+id/textView5"
+        android:layout_toStartOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorBlue"
+        android:text="زمان آزمون  "
+        android:layout_marginRight="132dp"
+        android:layout_marginEnd="132dp"
+        android:layout_alignBaseline="@+id/chronometer5"
+        android:layout_alignBottom="@+id/chronometer5"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_toStartOf="@+id/textView4" />
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/button8" />
+
+
+</RelativeLayout>
