@@ -27,7 +27,7 @@ public class QuestionsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
-         /**chor = (Chronometer)findViewById(R.id.chronometer5);
+         chor = (Chronometer)findViewById(R.id.chronometer5);
              new CountDownTimer(600000,0) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -40,7 +40,7 @@ public class QuestionsActivity extends Activity {
             public void onFinish() {
                 startActivity(new Intent(getApplicationContext(),RankActivity.class));
             }
-        }.start();**/
+        }.start();
         listView =(ListView)findViewById(R.id.list_view);
         DBHelper db =new DBHelper(this);
         db.getData();
@@ -54,6 +54,12 @@ public class QuestionsActivity extends Activity {
         listView.setAdapter(arrayAdapter3);
         ArrayAdapter<String> arrayAdapter4 = new ArrayAdapter<String>(this, R.layout.list_item, R.id.radio_button_number_four, number4);
         listView.setAdapter(arrayAdapter4);
+        }
+        public static int[] mark(){
+            int[] marks = new int[2];
+
+
+            return marks;
         }
 
     }

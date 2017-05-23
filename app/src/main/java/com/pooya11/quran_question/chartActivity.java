@@ -1,29 +1,25 @@
 package com.pooya11.quran_question;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.view.View;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
-public class RankActivity extends Activity {
+public class chartActivity extends Activity {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rank);
-        BarChart chart = (BarChart) findViewById(R.id.chart);
+        setContentView(R.layout.activity_chart);
+        BarChart chart = (BarChart) findViewById(R.id.horizontalBarChart);
 
         BarData data = new BarData(getXAxisValues(), getDataSet());
         chart.setData(data);
@@ -55,9 +51,5 @@ public class RankActivity extends Activity {
         xAxis.add("تعداد غلظ");
         xAxis.add("تعداد درست");
         return xAxis;
-    }
-
-    public void framelayout_chart(View view) {
-        startActivity(new Intent(this,chartActivity.class));
     }
 }

@@ -30,5 +30,5 @@ dependencies {
     compile 'com.android.support:design:25.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     compile 'com.android.support:support-v4:25.2.0'
-    //testCompile 'org.testng:testng:6.9.6'
+    compile files('libs/mpandroidchartlibrary-2-1-0.jar')
 }

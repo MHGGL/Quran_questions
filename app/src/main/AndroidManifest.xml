@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".ListTestActivity" />
         <activity android:name=".QuestionsActivity" />
-        <activity android:name=".RankActivity"></activity>
+        <activity android:name=".RankActivity" />
+        <activity android:name=".chartActivity"></activity>
     </application>
 
 </manifest>
