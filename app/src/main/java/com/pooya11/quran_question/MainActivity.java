@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.drm.DrmStore;
+import android.graphics.Interpolator;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,21 +21,33 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.OvershootInterpolator;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     View views;
+    float aFloat=4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        try  {
-            new DBHelper(this);
-            SQLiteDatabase.openDatabase("Questions",null, MODE_PRIVATE,null);
-        }catch (Exception ex){
-            Log.e("Errorrrrrrr", "onCreate: vay na");
-        }
-
+        Button btn = (Button)findViewById(R.id.btn_my_marks);
+        Button btn2 = (Button)findViewById(R.id.btn_developer);
+        Button btn3 = (Button)findViewById(R.id.btn_tests);
+        Button btn4 = (Button)findViewById(R.id.btn_exit);
+        Animation animation
+                = AnimationUtils.loadAnimation(this, R.anim.animation);
+        Animation animation2
+                = AnimationUtils.loadAnimation(this, R.anim.animation_back);
+        btn.startAnimation(animation);
+        btn2.startAnimation(animation2);
+        btn3.startAnimation(animation);
+        btn4.startAnimation(animation2);
+        DataAdd_Get dataAdd_get = new DataAdd_Get(this);
+        dataAdd_get.createRow();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

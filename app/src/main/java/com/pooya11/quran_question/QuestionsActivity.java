@@ -10,19 +10,21 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Chronometer;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import static android.R.id.list;
 import static android.content.ContentValues.TAG;
-import static com.pooya11.quran_question.DBHelper.number1;
-import static com.pooya11.quran_question.DBHelper.number2;
-import static com.pooya11.quran_question.DBHelper.number3;
-import static com.pooya11.quran_question.DBHelper.number4;
-import static com.pooya11.quran_question.DBHelper.questions;
+import static com.pooya11.quran_question.DataAdd_Get.number1;
+import static com.pooya11.quran_question.DataAdd_Get.number2;
+import static com.pooya11.quran_question.DataAdd_Get.number3;
+import static com.pooya11.quran_question.DataAdd_Get.number4;
+import static com.pooya11.quran_question.DataAdd_Get.number_true;
+import static com.pooya11.quran_question.DataAdd_Get.questions;
 
 public class QuestionsActivity extends Activity {
     Chronometer chor;
     SQLiteDatabase sqLiteDatabase;
     ListView listView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,18 +44,11 @@ public class QuestionsActivity extends Activity {
             }
         }.start();
         listView =(ListView)findViewById(R.id.list_view);
-        DBHelper db =new DBHelper(this);
-        db.getData();
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.txt_question, questions);
-        listView.setAdapter(arrayAdapter);
-        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(this, R.layout.list_item, R.id.radio_button_number_one, number1);
-        listView.setAdapter(arrayAdapter1);
-        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(this, R.layout.list_item, R.id.radio_button_number_two, number2);
-        listView.setAdapter(arrayAdapter2);
-        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<String>(this, R.layout.list_item, R.id.radio_button_number_three, number3);
-        listView.setAdapter(arrayAdapter3);
-        ArrayAdapter<String> arrayAdapter4 = new ArrayAdapter<String>(this, R.layout.list_item, R.id.radio_button_number_four, number4);
-        listView.setAdapter(arrayAdapter4);
+        DataAdd_Get dataAdd_get = new DataAdd_Get(this);
+        dataAdd_get.getData();
+        CustomAdapter adapter = new
+                CustomAdapter(QuestionsActivity.this, questions, number1,number2,number3,number4);
+        listView.setAdapter(adapter);
         }
         public static int[] mark(){
             int[] marks = new int[2];
