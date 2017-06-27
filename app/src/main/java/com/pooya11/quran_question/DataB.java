@@ -16,7 +16,7 @@ public class DataB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE SevenFragment(id INTEGER AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE SevenFragment(id INTEGER AUTO INCREMENT," +
                 " number_test INTEGER," +
                 " question TEXT, number_one TEXT," +
                 " number_two TEXT," +
@@ -24,7 +24,7 @@ public class DataB extends SQLiteOpenHelper {
                 " number_four TEXT,"+
                 " number_true TEXT)");
 
-        db.execSQL("CREATE TABLE EightFragment(id INTEGER AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE EightFragment(id INTEGER AUTO INCREMENT," +
                 " number_test VARCHAR(255)," +
                 " question TEXT, number_one TEXT," +
                 " number_two TEXT," +
@@ -32,7 +32,7 @@ public class DataB extends SQLiteOpenHelper {
                 " number_four TEXT,"+
                 " number_true TEXT)");
 
-        db.execSQL("CREATE TABLE NineFragment(id INTEGER AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE NineFragment(id INTEGER AUTO INCREMENT," +
                 " number_test VARCHAR(255)," +
                 " question TEXT, number_one TEXT," +
                 " number_two TEXT," +

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/coor"
+    android:background="#e3edfb"
     android:layout_height="match_parent"
     tools:context="com.pooya11.quran_question.MainActivity">
 
@@ -32,10 +33,6 @@
         app:layout_anchorGravity="bottom|left"
         app:srcCompat="@drawable/ic_cloud_download_black_24dp" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_main" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -62,6 +59,10 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="top|right"
         app:srcCompat="@drawable/ic_dehaze_black_24dp" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
 
 
 </android.support.design.widget.CoordinatorLayout>

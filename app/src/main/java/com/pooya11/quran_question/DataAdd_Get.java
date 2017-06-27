@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 /**
  * Created by acer on 6/18/2017.
@@ -17,11 +18,6 @@ public class DataAdd_Get {
     public DataAdd_Get(Context context) {
         dbHelper = new DataB(context);
         db = dbHelper.getWritableDatabase();
-    }
-
-    // Close the db
-    public void close() {
-        db.close();
     }
 
 
@@ -45,14 +41,14 @@ public class DataAdd_Get {
                 "الف)باطل است – آّب مضاف است",
                 "الف) رهایی از احساس بیهودگی",
                 "الف) امام علی علیه السلام"};
-        String [] number_two = {"ب) معلمان",
-                "ب) روحانیون با تقوی",
+        String [] number_two = {"ب) روحانیون با تقوی",
                 "ب) خوش رفتاری",
                 "ب) مضاف",
                 "ب) 313 نفرند",
                 "ب)پیروی نکردن از عقاید باطل",
                 "ب) صحیح است - آّب مضاف نیست",
-                "ب) توکل به خدا و دل بستن به او"};
+                "ب) توکل به خدا و دل بستن به او",
+                "ب}امام سجاد علیه السلام"};
         String [] number_three = {"ج) دانشمندان دینی",
                 "ج) ترویج کارنیک",
                 "ج) غصبی",
@@ -68,8 +64,15 @@ public class DataAdd_Get {
                 "د) باور به سخنان خدا",
                 "د) باطل است – آّ ب مطلق است",
                 "د) رسیدن به لذت های دنیا",
-                "د) امام خمینی"};
-        String [] number_true = {};
+                "د) امام خمینی (ره)"};
+        String [] number_true = {"ب) روحانیون با تقوی",
+                "د) تمامی موارد",
+                "ج) غصبی",
+                "ب) 313 نفرند",
+                "الف) استقامت و پایداری در راه خدا",
+                "الف)باطل است – آّب مضاف است",
+                "ج) دست یافتن به آرامش",
+                "ج) امام حسین علیه السلام"};
         try {
             for (int i = 0; i < 8; i++) {
                 contentValues.put("question", Question[i]);
@@ -78,6 +81,7 @@ public class DataAdd_Get {
                 contentValues.put("number_two", number_two[i]);
                 contentValues.put("number_three", number_three[i]);
                 contentValues.put("number_four", number_four[i]);
+                contentValues.put("number_true", number_true[i]);
                 db.insert("SevenFragment", null, contentValues);
             }
         }finally {
@@ -85,7 +89,7 @@ public class DataAdd_Get {
                     db.close();
             }
         }
-        ContentValues contentValues2 = new ContentValues();
+        /*ContentValues contentValues2 = new ContentValues();
         String [] Question2 = {};
         String [] number_one2 = {};
         String [] number_two2 = {};
@@ -129,6 +133,7 @@ public class DataAdd_Get {
                     db.close();
             }
         }
+        */
     }
 
     public static String[]questions = new String[8];
@@ -138,27 +143,23 @@ public class DataAdd_Get {
     public static String[]number4 = new String[8];
     public static String[]number_true = new String[8];
 
-    public void getData(){
+    public void getData() {
 
         SQLiteDatabase dbs = dbHelper.getReadableDatabase();
-        Cursor resultSet = dbs.rawQuery("SELECT question , number_one , number_two , number_three , number_four , number_true FROM "+ListTestActivity.NameTest+" WHERE number_test = "+
-                ListTestActivity.NumberTest,null);
-        resultSet.moveToFirst();
-        int count=0;
-        while(count < 8){
-            questions[count]=resultSet.getString(resultSet.getColumnIndex("question"));
-            number1[count]=resultSet.getString(resultSet.getColumnIndex("number_one"));
-            number2[count]=resultSet.getString(resultSet.getColumnIndex("number_two"));
-            number3[count]=resultSet.getString(resultSet.getColumnIndex("number_three"));
-            number4[count]=resultSet.getString(resultSet.getColumnIndex("number_four"));
-            number_true[count]=resultSet.getString(resultSet.getColumnIndex("number_true"));
-            count++;
+        Cursor resultSet = dbs.rawQuery("SELECT question , number_one , number_two , number_three , number_four , number_true FROM " + ListTestActivity.NameTest + " WHERE number_test = " +
+                ListTestActivity.NumberTest, null);
+        int count = 0;
+        if (resultSet.moveToFirst()) {
+            do {
+                questions[count] = resultSet.getString(resultSet.getColumnIndex("question"));
+                number1[count] = resultSet.getString(resultSet.getColumnIndex("number_one"));
+                number2[count] = resultSet.getString(resultSet.getColumnIndex("number_two"));
+                number3[count] = resultSet.getString(resultSet.getColumnIndex("number_three"));
+                number4[count] = resultSet.getString(resultSet.getColumnIndex("number_four"));
+                number_true[count] = resultSet.getString(resultSet.getColumnIndex("number_true"));
+                count++;
+            } while (resultSet.moveToNext());
+            resultSet.close();
         }
-        resultSet.close();
     }
-
-
-
-
-
 }

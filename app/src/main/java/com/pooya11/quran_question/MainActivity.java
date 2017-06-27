@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     View views;
     float aFloat=4;
+    SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +47,10 @@ public class MainActivity extends AppCompatActivity
         btn2.startAnimation(animation2);
         btn3.startAnimation(animation);
         btn4.startAnimation(animation2);
-        DataAdd_Get dataAdd_get = new DataAdd_Get(this);
-        dataAdd_get.createRow();
+            db = openOrCreateDatabase("Questions",MODE_PRIVATE,null);
+            DataAdd_Get dataAdd_get = new DataAdd_Get(this);
+            dataAdd_get.createRow();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,6 +46,7 @@ public class QuestionsActivity extends Activity {
             }
         }.start();
         listView =(ListView)findViewById(R.id.list_view);
+        listView.setBackgroundResource(R.drawable.item_list);
         DataAdd_Get dataAdd_get = new DataAdd_Get(this);
         dataAdd_get.getData();
         CustomAdapter adapter = new
@@ -51,7 +54,7 @@ public class QuestionsActivity extends Activity {
         listView.setAdapter(adapter);
         }
         public static int[] mark(){
-            int[] marks = new int[2];
+                int[] marks = new int[2];
 
 
             return marks;
